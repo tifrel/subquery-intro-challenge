@@ -1,0 +1,133 @@
+yarn run v1.22.11
+$ docker compose pull && docker compose up
+Attaching to graphql-engine_1, postgres_1, subquery-node_1
+postgres_1        | The files belonging to this database system will be owned by user "postgres".
+postgres_1        | This user must also own the server process.
+postgres_1        | 
+postgres_1        | The database cluster will be initialized with locale "en_US.utf8".
+postgres_1        | The default database encoding has accordingly been set to "UTF8".
+postgres_1        | The default text search configuration will be set to "english".
+postgres_1        | 
+postgres_1        | Data page checksums are disabled.
+postgres_1        | 
+postgres_1        | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres_1        | creating subdirectories ... ok
+postgres_1        | selecting dynamic shared memory implementation ... posix
+postgres_1        | selecting default max_connections ... 100
+postgres_1        | selecting default shared_buffers ... 128MB
+postgres_1        | selecting default time zone ... UTC
+postgres_1        | creating configuration files ... ok
+postgres_1        | running bootstrap script ... ok
+postgres_1        | performing post-bootstrap initialization ... sh: locale: not found
+postgres_1        | 2021-09-27 09:00:12.657 UTC [32] WARNING:  no usable system locales were found
+graphql-engine_1  | 2021-09-27T09:00:13.715Z <[95mnestjs[39m> [32mINFO[39m Starting Nest application... 
+graphql-engine_1  | 2021-09-27T09:00:13.843Z <[95mnestjs[39m> [32mINFO[39m AppModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:13.846Z <[95mnestjs[39m> [32mINFO[39m ConfigureModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:13.847Z <[95mnestjs[39m> [32mINFO[39m GraphqlModule dependencies initialized 
+graphql-engine_1  | (node:9) UnhandledPromiseRejectionWarning: Error: connect ECONNREFUSED 172.18.0.2:5432
+graphql-engine_1  |     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1148:16)
+graphql-engine_1  | (Use `node --trace-warnings ...` to show where the warning was created)
+graphql-engine_1  | (node:9) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+graphql-engine_1  | (node:9) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+graphql-engine_1 exited with code 0
+subquery-node_1   | 2021-09-27T09:00:18.195Z <[95mdb[39m> [31mERROR[39m Unable to connect to the database SequelizeConnectionRefusedError: connect ECONNREFUSED 172.18.0.2:5432
+subquery-node_1   | 2021-09-27T09:00:21.232Z <[95mdb[39m> [31mERROR[39m Unable to connect to the database SequelizeConnectionRefusedError: connect ECONNREFUSED 172.18.0.2:5432
+graphql-engine_1  | 2021-09-27T09:00:21.835Z <[95mnestjs[39m> [32mINFO[39m Starting Nest application... 
+graphql-engine_1  | 2021-09-27T09:00:21.943Z <[95mnestjs[39m> [32mINFO[39m AppModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:21.944Z <[95mnestjs[39m> [32mINFO[39m ConfigureModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:21.945Z <[95mnestjs[39m> [32mINFO[39m GraphqlModule dependencies initialized 
+graphql-engine_1  | (node:8) UnhandledPromiseRejectionWarning: Error: connect ECONNREFUSED 172.18.0.2:5432
+graphql-engine_1  |     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1148:16)
+graphql-engine_1  | (Use `node --trace-warnings ...` to show where the warning was created)
+graphql-engine_1  | (node:8) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+graphql-engine_1  | (node:8) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+graphql-engine_1 exited with code 0
+postgres_1        | ok
+subquery-node_1   | 2021-09-27T09:00:24.237Z <[95mdb[39m> [31mERROR[39m Unable to connect to the database SequelizeConnectionRefusedError: connect ECONNREFUSED 172.18.0.2:5432
+postgres_1        | syncing data to disk ... ok
+postgres_1        | 
+postgres_1        | 
+postgres_1        | Success. You can now start the database server using:
+postgres_1        | 
+postgres_1        |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres_1        | 
+postgres_1        | initdb: warning: enabling "trust" authentication for local connections
+postgres_1        | You can change this by editing pg_hba.conf or using the option -A, or
+postgres_1        | --auth-local and --auth-host, the next time you run initdb.
+postgres_1        | waiting for server to start....2021-09-27 09:00:24.730 UTC [37] LOG:  starting PostgreSQL 12.8 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 10.3.1_git20210424) 10.3.1 20210424, 64-bit
+postgres_1        | 2021-09-27 09:00:24.731 UTC [37] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres_1        | 2021-09-27 09:00:24.760 UTC [38] LOG:  database system was shut down at 2021-09-27 09:00:22 UTC
+postgres_1        | 2021-09-27 09:00:24.775 UTC [37] LOG:  database system is ready to accept connections
+postgres_1        |  done
+postgres_1        | server started
+postgres_1        | 
+postgres_1        | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres_1        | 
+postgres_1        | 2021-09-27 09:00:25.027 UTC [37] LOG:  received fast shutdown request
+postgres_1        | waiting for server to shut down...2021-09-27 09:00:25.029 UTC [37] LOG:  aborting any active transactions
+postgres_1        | 2021-09-27 09:00:25.030 UTC [37] LOG:  background worker "logical replication launcher" (PID 44) exited with exit code 1
+postgres_1        | .2021-09-27 09:00:25.030 UTC [39] LOG:  shutting down
+postgres_1        | 2021-09-27 09:00:25.071 UTC [37] LOG:  database system is shut down
+postgres_1        |  done
+postgres_1        | server stopped
+postgres_1        | 
+postgres_1        | PostgreSQL init process complete; ready for start up.
+postgres_1        | 
+postgres_1        | 2021-09-27 09:00:25.145 UTC [1] LOG:  starting PostgreSQL 12.8 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 10.3.1_git20210424) 10.3.1 20210424, 64-bit
+postgres_1        | 2021-09-27 09:00:25.145 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres_1        | 2021-09-27 09:00:25.145 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres_1        | 2021-09-27 09:00:25.150 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres_1        | 2021-09-27 09:00:25.186 UTC [49] LOG:  database system was shut down at 2021-09-27 09:00:25 UTC
+postgres_1        | 2021-09-27 09:00:25.210 UTC [1] LOG:  database system is ready to accept connections
+graphql-engine_1  | 2021-09-27T09:00:26.803Z <[95mnestjs[39m> [32mINFO[39m Starting Nest application... 
+graphql-engine_1  | 2021-09-27T09:00:26.860Z <[95mnestjs[39m> [32mINFO[39m AppModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:26.861Z <[95mnestjs[39m> [32mINFO[39m ConfigureModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:26.861Z <[95mnestjs[39m> [32mINFO[39m GraphqlModule dependencies initialized 
+postgres_1        | 2021-09-27 09:00:27.073 UTC [56] ERROR:  relation "public.subqueries" does not exist at character 22
+postgres_1        | 2021-09-27 09:00:27.073 UTC [56] STATEMENT:  select *
+postgres_1        | 	       from public.subqueries
+postgres_1        | 	       where name = $1
+graphql-engine_1  | (node:8) UnhandledPromiseRejectionWarning: error: relation "public.subqueries" does not exist
+graphql-engine_1  |     at Parser.parseErrorMessage (/usr/local/lib/node_modules/@subql/query/node_modules/pg-protocol/dist/parser.js:287:98)
+graphql-engine_1  |     at Parser.handlePacket (/usr/local/lib/node_modules/@subql/query/node_modules/pg-protocol/dist/parser.js:126:29)
+graphql-engine_1  |     at Parser.parse (/usr/local/lib/node_modules/@subql/query/node_modules/pg-protocol/dist/parser.js:39:38)
+graphql-engine_1  |     at Socket.<anonymous> (/usr/local/lib/node_modules/@subql/query/node_modules/pg-protocol/dist/index.js:11:42)
+graphql-engine_1  |     at Socket.emit (events.js:400:28)
+graphql-engine_1  |     at addChunk (internal/streams/readable.js:290:12)
+graphql-engine_1  |     at readableAddChunk (internal/streams/readable.js:265:9)
+graphql-engine_1  |     at Socket.Readable.push (internal/streams/readable.js:204:10)
+graphql-engine_1  |     at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+graphql-engine_1  | (Use `node --trace-warnings ...` to show where the warning was created)
+graphql-engine_1  | (node:8) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+graphql-engine_1  | (node:8) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+graphql-engine_1 exited with code 0
+graphql-engine_1  | 2021-09-27T09:00:31.222Z <[95mnestjs[39m> [32mINFO[39m Starting Nest application... 
+graphql-engine_1  | 2021-09-27T09:00:31.296Z <[95mnestjs[39m> [32mINFO[39m AppModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:31.296Z <[95mnestjs[39m> [32mINFO[39m ConfigureModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:31.297Z <[95mnestjs[39m> [32mINFO[39m GraphqlModule dependencies initialized 
+graphql-engine_1  | (node:9) UnhandledPromiseRejectionWarning: Error: unknown project name app
+graphql-engine_1  |     at ProjectService.getProjectSchema (/usr/local/lib/node_modules/@subql/query/dist/graphql/project.service.js:29:19)
+graphql-engine_1  |     at processTicksAndRejections (internal/process/task_queues.js:95:5)
+graphql-engine_1  |     at async GraphqlModule.createServer (/usr/local/lib/node_modules/@subql/query/dist/graphql/graphql.module.js:49:26)
+graphql-engine_1  |     at async GraphqlModule.onModuleInit (/usr/local/lib/node_modules/@subql/query/dist/graphql/graphql.module.js:40:29)
+graphql-engine_1  |     at async Object.callModuleInitHook (/usr/local/lib/node_modules/@subql/query/node_modules/@nestjs/core/hooks/on-module-init.hook.js:51:9)
+graphql-engine_1  |     at async NestApplication.callInitHook (/usr/local/lib/node_modules/@subql/query/node_modules/@nestjs/core/nest-application-context.js:166:13)
+graphql-engine_1  |     at async NestApplication.init (/usr/local/lib/node_modules/@subql/query/node_modules/@nestjs/core/nest-application.js:93:9)
+graphql-engine_1  |     at async NestApplication.listen (/usr/local/lib/node_modules/@subql/query/node_modules/@nestjs/core/nest-application.js:147:33)
+graphql-engine_1  |     at async /usr/local/lib/node_modules/@subql/query/dist/main.js:13:5
+graphql-engine_1  | (Use `node --trace-warnings ...` to show where the warning was created)
+graphql-engine_1  | (node:9) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+graphql-engine_1  | (node:9) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+subquery-node_1   | 2021-09-27 09:00:40        REGISTRY: Unknown signed extensions SetEvmOrigin found, treating them as no-effect
+graphql-engine_1 exited with code 0
+graphql-engine_1  | 2021-09-27T09:00:45.471Z <[95mnestjs[39m> [32mINFO[39m Starting Nest application... 
+graphql-engine_1  | 2021-09-27T09:00:45.528Z <[95mnestjs[39m> [32mINFO[39m AppModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:45.529Z <[95mnestjs[39m> [32mINFO[39m ConfigureModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:45.529Z <[95mnestjs[39m> [32mINFO[39m GraphqlModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:00:46.640Z <[95mnestjs[39m> [32mINFO[39m Nest application successfully started 
+graphql-engine_1  | Failed to fetch indexer meta,  request to http://subquery-node:3000/meta failed, reason: connect ECONNREFUSED 172.18.0.3:3000
+graphql-engine_1  | Failed to fetch indexer health,  request to http://subquery-node:3000/health failed, reason: connect ECONNREFUSED 172.18.0.3:3000
+subquery-node_1   | 2021-09-27T09:00:46.904Z <[95msubql-node[39m> [32mINFO[39m node started 
+subquery-node_1   | 2021-09-27T09:00:58.652Z <[95mfetch[39m> [32mINFO[39m fetch block [561900,561999], total 100 blocks 
+subquery-node_1   | 2021-09-27T09:00:59.692Z <[95mfetch[39m> [31mERROR[39m failed to index block at height 561900 handleEvent() TypeError: Cannot read property 'block' of undefined
+subquery-node_1 exited with code 1

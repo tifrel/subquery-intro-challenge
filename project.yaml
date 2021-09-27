@@ -1,0 +1,28 @@
+specVersion: 0.0.1
+description: ""
+repository: ""
+schema: ./schema.graphql
+network:
+  endpoint: wss://kusama.api.onfinality.io/public-ws
+  # types: *karuraTypes
+  # typesAlias: *karuraTypesAlias
+  # typesBundle: *karuraTypesBundle
+  # endpoint: wss://karura.api.onfinality.io/public-ws
+  #dictionary: https://api.subquery.network/sq/AcalaNetwork/karura-dictionary
+
+# starting blocks
+# polkadot: 6 500 000
+# kusama:   9 000 000
+# karura:     600 000
+dataSources:
+  - name: main
+    kind: substrate/Runtime
+    startBlock: 9000000
+    mapping:
+      handlers:
+        - handler: handleBlock
+          kind: substrate/BlockHandler
+        - handler: handleEvent
+          kind: substrate/EventHandler
+        - handler: handleCall
+          kind: substrate/CallHandler

@@ -1,0 +1,83 @@
+yarn run v1.22.11
+$ docker compose pull && docker compose up
+Attaching to graphql-engine_1, postgres_1, subquery-node_1
+postgres_1        | The files belonging to this database system will be owned by user "postgres".
+postgres_1        | This user must also own the server process.
+postgres_1        | 
+postgres_1        | The database cluster will be initialized with locale "en_US.utf8".
+postgres_1        | The default database encoding has accordingly been set to "UTF8".
+postgres_1        | The default text search configuration will be set to "english".
+postgres_1        | 
+postgres_1        | Data page checksums are disabled.
+postgres_1        | 
+postgres_1        | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+postgres_1        | creating subdirectories ... ok
+postgres_1        | selecting dynamic shared memory implementation ... posix
+postgres_1        | selecting default max_connections ... 100
+postgres_1        | selecting default shared_buffers ... 128MB
+postgres_1        | selecting default time zone ... UTC
+postgres_1        | creating configuration files ... ok
+subquery-node_1   | 2021-09-27T09:03:01.926Z <[95mdb[39m> [31mERROR[39m Unable to connect to the database SequelizeConnectionRefusedError: connect ECONNREFUSED 172.18.0.3:5432
+postgres_1        | running bootstrap script ... ok
+subquery-node_1   | 2021-09-27T09:03:04.929Z <[95mdb[39m> [31mERROR[39m Unable to connect to the database SequelizeConnectionRefusedError: connect ECONNREFUSED 172.18.0.3:5432
+subquery-node_1 exited with code 1
+postgres_1        | performing post-bootstrap initialization ... sh: locale: not found
+postgres_1        | 2021-09-27 09:03:05.502 UTC [33] WARNING:  no usable system locales were found
+graphql-engine_1 exited with code 0
+postgres_1        | ok
+subquery-node_1   | 2021-09-27T09:03:16.154Z <[95mdb[39m> [31mERROR[39m Unable to connect to the database SequelizeConnectionRefusedError: connect ECONNREFUSED 172.18.0.3:5432
+postgres_1        | syncing data to disk ... ok
+postgres_1        | 
+postgres_1        | 
+postgres_1        | Success. You can now start the database server using:
+postgres_1        | 
+postgres_1        |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+postgres_1        | 
+postgres_1        | initdb: warning: enabling "trust" authentication for local connections
+postgres_1        | You can change this by editing pg_hba.conf or using the option -A, or
+postgres_1        | --auth-local and --auth-host, the next time you run initdb.
+postgres_1        | waiting for server to start....2021-09-27 09:03:16.648 UTC [38] LOG:  starting PostgreSQL 12.8 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 10.3.1_git20210424) 10.3.1 20210424, 64-bit
+postgres_1        | 2021-09-27 09:03:16.649 UTC [38] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres_1        | 2021-09-27 09:03:16.679 UTC [39] LOG:  database system was shut down at 2021-09-27 09:03:13 UTC
+postgres_1        | 2021-09-27 09:03:16.699 UTC [38] LOG:  database system is ready to accept connections
+postgres_1        |  done
+postgres_1        | server started
+postgres_1        | 
+postgres_1        | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+postgres_1        | 
+postgres_1        | waiting for server to shut down...2021-09-27 09:03:16.968 UTC [38] LOG:  received fast shutdown request
+postgres_1        | .2021-09-27 09:03:16.971 UTC [38] LOG:  aborting any active transactions
+postgres_1        | 2021-09-27 09:03:16.972 UTC [38] LOG:  background worker "logical replication launcher" (PID 45) exited with exit code 1
+postgres_1        | 2021-09-27 09:03:16.973 UTC [40] LOG:  shutting down
+postgres_1        | 2021-09-27 09:03:17.014 UTC [38] LOG:  database system is shut down
+postgres_1        |  done
+postgres_1        | server stopped
+postgres_1        | 
+postgres_1        | PostgreSQL init process complete; ready for start up.
+postgres_1        | 
+postgres_1        | 2021-09-27 09:03:17.085 UTC [1] LOG:  starting PostgreSQL 12.8 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 10.3.1_git20210424) 10.3.1 20210424, 64-bit
+postgres_1        | 2021-09-27 09:03:17.085 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres_1        | 2021-09-27 09:03:17.085 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres_1        | 2021-09-27 09:03:17.089 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres_1        | 2021-09-27 09:03:17.130 UTC [50] LOG:  database system was shut down at 2021-09-27 09:03:16 UTC
+postgres_1        | 2021-09-27 09:03:17.149 UTC [1] LOG:  database system is ready to accept connections
+subquery-node_1   | 2021-09-27 09:03:31        REGISTRY: Unknown signed extensions SetEvmOrigin found, treating them as no-effect
+subquery-node_1   | 2021-09-27T09:03:38.855Z <[95msubql-node[39m> [32mINFO[39m node started 
+subquery-node_1   | 2021-09-27 09:03:47        RPC-CORE: getStorage(key: StorageKey, at?: BlockHash): StorageData:: Unable to decode storage system.events:: createType(Vec<EventRecord>):: decodeU8a: failed at 0x00030000003600de… on : {"phase":"Phase","event":"Event","topics":"Vec<Hash>"}:: decodeU8a: failed at 0x0200d7b8926b326d… on topics: Vec<Hash>:: Vec length 775274496 exceeds 65536
+subquery-node_1   | 2021-09-27T09:03:47.158Z <[95mindexer[39m> [31mERROR[39m failed to fetch block Error: Unable to decode storage system.events:: createType(Vec<EventRecord>):: decodeU8a: failed at 0x00030000003600de… on : {"phase":"Phase","event":"Event","topics":"Vec<Hash>"}:: decodeU8a: failed at 0x0200d7b8926b326d… on topics: Vec<Hash>:: Vec length 775274496 exceeds 65536
+subquery-node_1 exited with code 1
+graphql-engine_1  | 2021-09-27T09:04:06.778Z <[95mnestjs[39m> [32mINFO[39m Starting Nest application... 
+graphql-engine_1  | 2021-09-27T09:04:06.861Z <[95mnestjs[39m> [32mINFO[39m AppModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:04:06.862Z <[95mnestjs[39m> [32mINFO[39m ConfigureModule dependencies initialized 
+graphql-engine_1  | 2021-09-27T09:04:06.863Z <[95mnestjs[39m> [32mINFO[39m GraphqlModule dependencies initialized 
+subquery-node_1   | 2021-09-27 09:04:07        REGISTRY: Unknown signed extensions SetEvmOrigin found, treating them as no-effect
+graphql-engine_1  | 2021-09-27T09:04:08.313Z <[95mnestjs[39m> [32mINFO[39m Nest application successfully started 
+graphql-engine_1  | Failed to fetch indexer meta,  request to http://subquery-node:3000/meta failed, reason: connect ECONNREFUSED 172.18.0.2:3000
+graphql-engine_1  | Failed to fetch indexer health,  request to http://subquery-node:3000/health failed, reason: connect ECONNREFUSED 172.18.0.2:3000
+subquery-node_1   | 2021-09-27T09:04:15.091Z <[95msubql-node[39m> [32mINFO[39m node started 
+subquery-node_1   | 2021-09-27T09:04:18.410Z <[95mhealth[39m> [31mERROR[39m Indexer is not healthy Error: Indexer is not healthy
+subquery-node_1   | 2021-09-27 09:04:26        RPC-CORE: getStorage(key: StorageKey, at?: BlockHash): StorageData:: Unable to decode storage system.events:: createType(Vec<EventRecord>):: decodeU8a: failed at 0x00030000003600de… on : {"phase":"Phase","event":"Event","topics":"Vec<Hash>"}:: decodeU8a: failed at 0x0200d7b8926b326d… on topics: Vec<Hash>:: Vec length 775274496 exceeds 65536
+subquery-node_1   | 2021-09-27T09:04:26.076Z <[95mindexer[39m> [31mERROR[39m failed to fetch block Error: Unable to decode storage system.events:: createType(Vec<EventRecord>):: decodeU8a: failed at 0x00030000003600de… on : {"phase":"Phase","event":"Event","topics":"Vec<Hash>"}:: decodeU8a: failed at 0x0200d7b8926b326d… on topics: Vec<Hash>:: Vec length 775274496 exceeds 65536
+subquery-node_1 exited with code 1
+graphql-engine_1  | Failed to fetch indexer meta,  request to http://subquery-node:3000/meta failed, reason: connect ECONNREFUSED 172.18.0.2:3000
+graphql-engine_1  | Failed to fetch indexer health,  request to http://subquery-node:3000/health failed, reason: connect ECONNREFUSED 172.18.0.2:3000

@@ -1,0 +1,17 @@
+# Node artifact files
+node_modules/
+
+# lock files
+yarn.lock
+package-lock.json
+
+# Generated/compiled code
+dist/
+src/types
+
+# Database
+.data/
+
+# OS-specific clutter
+.DS_Store
+Thumbs.db

@@ -1,0 +1,30 @@
+{
+  "name": "intro-challenges",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "prepack": "rm -rf dist && npm build",
+    "test": "jest",
+    "codegen": "./node_modules/.bin/subql codegen",
+    "clean": "rm -r .data/",
+    "start": "docker compose pull && docker compose up",
+    "db": "postgres -D .data/postgres"
+  },
+  "homepage": "https://github.com/subquery/subql-starter",
+  "repository": "github:subquery/subql-starter",
+  "files": [
+    "dist",
+    "schema.graphql",
+    "project.yaml"
+  ],
+  "author": "tifrel",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@polkadot/api": "^5.7.1",
+    "@subql/types": "latest",
+    "typescript": "^4.1.3",
+    "@subql/cli": "latest"
+  }
+}
